@@ -1,0 +1,92 @@
+<metal:page define-macro="master">
+<tal:doctype tal:replace="structure string:&lt;!DOCTYPE html PUBLIC
+  &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
+  &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;" />
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    tal:define="portal_state context/@@plone_portal_state;
+        context_state context/@@plone_context_state;
+        plone_view context/@@plone;
+        lang portal_state/language;
+        view nocall:view | nocall: plone_view;
+        dummy python: plone_view.mark_view(view);
+        portal_url portal_state/portal_url;
+        checkPermission nocall: context/portal_membership/checkPermission;
+        site_properties context/portal_properties/site_properties;
+        ajax_load request/ajax_load | nothing"
+    tal:attributes="lang lang;">
+
+    <metal:cache use-macro="context/global_cache_settings/macros/cacheheaders">
+    Get the global cache headers located in global_cache_settings.
+    </metal:cache>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Forces IE8+ into newest rendering engine even if on an intranet. This has to be defined before any script/style tags. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+
+    <metal:baseslot define-slot="base">
+        <base tal:attributes="href plone_view/renderBase" /><!--[if lt IE 7]></base><![endif]-->
+    </metal:baseslot>
+
+    <tal:notajax tal:condition="not:ajax_load">
+    
+        <div tal:replace="structure provider:plone.htmlhead" />
+        <link tal:replace="structure provider:plone.htmlhead.links" />
+        <link type="text/css" tal:attributes="href string:${portal_url}/++resource++jquery.mobile/jquery.mobile-1.0a2.min.css" 
+        rel="stylesheet" media="screen" />
+        <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++jquery.mobile/jquery.mobile-1.0a2.min.js"></script>
+
+        <tal:comment replace="nothing"> 
+            Various slots where you can insert elements in the header from a template.
+        </tal:comment>
+        <metal:topslot define-slot="top_slot" />
+        <metal:headslot define-slot="head_slot" />
+        <metal:styleslot define-slot="style_slot" />
+        <metal:javascriptslot define-slot="javascript_head_slot" />
+
+        <meta name="viewport" content="width=device-width; initial-scale=0.6666; maximum-scale=1.0; minimum-scale=0.6666" />
+        <meta name="generator" content="Plone - http://plone.org" />
+    </tal:notajax>
+    
+</head>
+<body>
+
+<div data-role="page" id="foo">
+
+    <div data-role="header">
+        <h1>Foo</h1>
+    </div>
+    
+    <div data-role="content">
+        <p>I'm first in the source order so I'm shown as the page.</p>
+        <p>View internal page called <a href="#bar">bar</a></p> 
+    </div>
+    
+    <div data-role="footer">
+        <h4>Page Footer</h4>
+    </div>
+    
+</div>
+
+<div data-role="page" id="bar">
+
+    <div data-role="header">
+        <h1>Bar</h1>
+    </div>
+    
+    <div data-role="content">
+        <p>I'm second in the source order so I'm shown as the page.</p>
+        <p>View internal page called <a href="#bar">bar</a></p> 
+    </div>
+    
+    <div data-role="footer">
+        <h4>Page Footer</h4>
+    </div>
+
+</div>
+</body>
+</html>
+
+</metal:page>
