@@ -1,8 +1,15 @@
 <configure
-    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser" 
     xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="collective.js.jquerymobile">
 
   <five:registerPackage package="." initialize=".initialize" />
+
+  <browser:resourceDirectory
+      name="jquery.mobile"
+      directory="resources"
+      layer=".interfaces.IJQueryMobileLayer"
+      />
 
 </configure>
