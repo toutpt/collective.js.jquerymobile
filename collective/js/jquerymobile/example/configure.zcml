@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.js.jquerymobile">
+
+  <browser:page
+    name="example.collective.js.jquerymobile"
+    for="*"
+    class=".mobile.Example"
+    template="mobile.pt"
+    permission="zope2.View"
+    />
+
+</configure>

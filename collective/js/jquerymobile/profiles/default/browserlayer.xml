@@ -1,4 +1,0 @@
-<layers>
-    <layer name="collective.js.jquerymobile" 
-           interface="collective.js.jquerymobile.interfaces.IJQueryMobileLayer" />
-</layers>

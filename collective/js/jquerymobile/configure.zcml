@@ -21,13 +21,4 @@
       layer=".interfaces.IJQueryMobileLayer"
       />
 
-  <browser:page
-      name="example.jquerymobile"
-      for="*"
-      class=".example.Example"
-      layer=".interfaces.IJQueryMobileLayer"
-      template="example.pt"
-      permission="zope2.View"
-      />
-
 </configure>
