@@ -6,19 +6,9 @@
 
   <five:registerPackage package="." initialize=".initialize" />
 
-  <genericsetup:registerProfile 
-      name="default" 
-      title="jQuery Mobile" 
-      directory="profiles/default" 
-      description="jQuery Mobile for Plone"
-      provides="Products.GenericSetup.interfaces.EXTENSION" 
-      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      />
-
   <browser:resourceDirectory
-      name="jquery.mobile"
+      name="collective.js.jquerymobile"
       directory="resources"
-      layer=".interfaces.IJQueryMobileLayer"
       />
 
 </configure>
