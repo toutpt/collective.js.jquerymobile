@@ -1,11 +1,16 @@
 Introduction
 ============
 
-This package provide jquery mobile resources as browser:resource.
+This package provide jQueryMobile_ as 'browser resource' for Plone.
 
 Version: 1.3.0 final
 
-About jquery mobile
+paths::
+
+  ++resource++collective.js.jquerymobile/jquery.mobile.css
+  ++resource++collective.js.jquerymobile/jquery.mobile.js
+
+About jQuery Mobile
 ===================
 
 jQuery Mobile is a Touch-Optimized Web Framework for Smartphones & Tablets.
@@ -25,7 +30,7 @@ Companies
 |makinacom|_
 
 * `Planet Makina Corpus <http://www.makina-corpus.org>`_
-* `Contact us <mailto:python@makina-corpus.org>`_
+* `Contact Makine Corpus <mailto:python@makina-corpus.org>`_
 
 People
 ------
@@ -34,7 +39,6 @@ People
 
 .. |makinacom| image:: http://depot.makina-corpus.org/public/logo.gif
 .. _makinacom:  http://www.makina-corpus.com
-.. _jquerymobile: http://jquerymobile.com/
+.. _jQueryMobile: http://jquerymobile.com/
 .. _github: https://github.com/DataTables
 .. _jQuery: http://jquery.com
-
