@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '1.3.1.0dev0'
+version = '1.3.1.0'
 
 setup(name='collective.js.jquerymobile',
       version=version,
