@@ -1,13 +1,12 @@
 from setuptools import setup, find_packages
-import os
 
-version = '1.3.0.2.dev0'
+version = '1.3.1.0dev0'
 
 setup(name='collective.js.jquerymobile',
       version=version,
       description="JQuery mobile integration in Plone",
       long_description=open("README.rst").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+                       open("CHANGES.txt").read(),
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[

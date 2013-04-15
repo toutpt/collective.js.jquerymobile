@@ -8,6 +8,7 @@ Version: 1.3.0 final
 paths::
 
   ++resource++collective.js.jquerymobile/jquery.mobile.css
+  ++resource++collective.js.jquerymobile/jquery.mobile.structure.css
   ++resource++collective.js.jquerymobile/jquery.mobile.js
 
 About jQuery Mobile

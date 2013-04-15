@@ -1,4 +1,4 @@
-recursive-include collective *
-recursive-include docs *
+include docs/*.txt
+recursive-include collective *.css *.js *.pdf *.png *.po *.pot *.pt *.txt *.xml *.zcml *.jpg
 include *
-global-exclude *.pyc
+global-exclude *.pyc *~
